@@ -1,0 +1,27 @@
+
+export  const gouvs = [
+  { id: 1, name: "Tunis", city: "Tunis" },
+  { id: 2, name: "Ariana", city: "Ariana" },
+  { id: 3, name: "Ben Arous", city: "Ben Arous" },
+  { id: 4, name: "Manouba", city: "Manouba" },
+  { id: 5, name: "Nabeul", city: "Nabeul" },
+  { id: 6, name: "Zaghouan", city: "Zaghouan" },
+  { id: 7, name: "Bizerte", city: "Bizerte" },
+  { id: 8, name: "Béja", city: "Beja" },
+  { id: 9, name: "Jendouba", city: "Jendouba" },
+  { id: 10, name: "Kef", city: "Le Kef" },
+  { id: 11, name: "Siliana", city: "Siliana" },
+  { id: 12, name: "Sousse", city: "Sousse" },
+  { id: 13, name: "Monastir", city: "Monastir" },
+  { id: 14, name: "Mahdia", city: "Mahdia" },
+  { id: 15, name: "Sfax", city: "Sfax" },
+  { id: 16, name: "Kairouan", city: "Kairouan" },
+  { id: 17, name: "Kasserine", city: "Kasserine" },
+  { id: 18, name: "Sidi Bouzid", city: "Sidi Bouzid" },
+  { id: 19, name: "Gabès", city: "Gabes" },
+  { id: 20, name: "Medenine", city: "Medenine" },
+  { id: 21, name: "Tataouine", city: "Tataouine" },
+  { id: 22, name: "Gafsa", city: "Gafsa" },
+  { id: 23, name: "Tozeur", city: "Tozeur" },
+  { id: 24, name: "Kebili", city: "Kebili" }
+];
