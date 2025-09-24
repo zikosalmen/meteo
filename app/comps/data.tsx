@@ -33,8 +33,7 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
     const vl=localStorage.getItem("ville")
     if(vl){
     setVille(JSON.parse(vl))
-      console.log("ville get:"+JSON.parse(vl))
-  }
+  }else{setVille(JSON.parse("Tunis"))}
 
   },[])
   const [ville, setVille] = useState<string>("");
