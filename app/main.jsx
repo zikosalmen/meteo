@@ -96,7 +96,8 @@ export default function Main() {
         </Card>
         <Card >
           <div className=" flex items-center gap-12  " >
-            <p>{data?.weather[0]?.description}{" "}</p>
+            <p>{data?.weather?.[0]?.description ?? "—"}</p>
+
 
             <Image
       src={`/${etat}`}
@@ -109,7 +110,7 @@ export default function Main() {
           
           </div>
           <div className=" flex items-center gap-12  ">
-          <p>Humidité : {data?.main.humidity}%</p>
+          <p>Humidité : {data?.main?.humidity?? "-"}%</p>
            <Image
       src="/humidite.png"
       width={200}
@@ -123,7 +124,7 @@ export default function Main() {
         <Card >
           <div className=" flex gap-12">
           
-         <p className=" whitespace-nowrap"> Vent : {data?.wind.speed} m/s</p>
+         <p className=" whitespace-nowrap"> Vent : {data?.wind?.speed} m/s</p>
           <Image
       src="/vent-light.png"
       width={200}
@@ -133,8 +134,8 @@ export default function Main() {
     />
     </div>
     <div className=" flex items-cente gap-2" >
-    <p className="text-lg">direction : {data?.wind.deg} deg</p>
-    <Flech angle={data?.wind.deg}  />
+    <p className="text-lg">direction : {data?.wind?.deg?? "-"} deg</p>
+    <Flech angle={data?.wind?.deg?? "-"}  />
     </div>
     
     

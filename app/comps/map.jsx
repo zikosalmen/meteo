@@ -1,12 +1,14 @@
 "use client";
 
 import { useContext, useEffect, useState } from "react";
-import {WeatherContext} from "./data"
+import { WeatherContext } from "./data";
+
 export default function Map() {
-  const [lat, setLat] = useState(0);  
-  const [lon, setLon] = useState(0);   
+  const [lat, setLat] = useState(0);
+  const [lon, setLon] = useState(0);
   const [localisation, setLocalisation] = useState({ gouvernorat: "", pays: "" });
-  const {data,ville ,setVille}=useContext(WeatherContext)
+  const { data, ville, setVille } = useContext(WeatherContext);
+
 
   useEffect(() => {
     if (!lat || !lon) return;
@@ -22,32 +24,31 @@ export default function Map() {
       .then((res) => {
         const gouvernorat = res.address?.state || res.address?.county || "—";
         const pays = res.address?.country || "—";
+
         setLocalisation({ gouvernorat, pays });
+
+
+        let ville = gouvernorat.substring(12,16);
+        setVille(ville);
+        console.log(ville)
+        localStorage.setItem("ville", JSON.stringify(ville));
+        console.log("ville: " + ville);
       })
       .catch((err) => console.error(err));
-  }, [lat, lon]);
-  
+  }, [lat, lon, setVille]);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
-      let ville=""
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          setLat( pos.coords.latitude)
-          setLon( pos.coords.longitude,)
-          let ville=localisation.gouvernorat.substring(12,16)
-          if(localisation.gouvernorat && localisation.gouvernorat!=="" ){setVille(ville);
-           localStorage.setItem("ville",JSON.stringify(ville))
-           console.log("vl"+ville)}
-        },
-      );
+      navigator.geolocation.getCurrentPosition((pos) => {
+        setLat(pos.coords.latitude);
+        setLon(pos.coords.longitude);
+        console.log("Latitude:", pos.coords.latitude);
+        console.log("Longitude:", pos.coords.longitude);
+      });
     }
   }, []);
-  
-  
 
   return (
-    <>
-    </>
+<></>
   );
 }

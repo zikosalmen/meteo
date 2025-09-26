@@ -32,7 +32,7 @@ useEffect(() => {
         time: new Date(item.dt * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
       }));
 
-      const nowValue = { temp: data?.main.temp?.toFixed(0), time: `${hours}:${minutes}` };
+      const nowValue = { temp: data?.main?.temp?.toFixed(0), time: `${hours}:${minutes}` };
       setTimeNow(nowValue);
       setdet([...part2, nowValue, ...part1]);
     });
