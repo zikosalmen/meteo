@@ -43,7 +43,7 @@ export default function Main() {
           <div className=" flex gap-20 ">
             <span>
               <p className="text-5xl text-left flex gap-5">
-                {data?.main.temp?.toFixed(0)} °C{" "}
+                {data?.main?.temp?.toFixed(0)} °C{" "}
                  <Image
       src="/termo.png"
       width={200}
@@ -96,7 +96,7 @@ export default function Main() {
         </Card>
         <Card >
           <div className=" flex items-center gap-12  " >
-            <p>{data?.weather[0].description}{" "}</p>
+            <p>{data?.weather[0]?.description}{" "}</p>
 
             <Image
       src={`/${etat}`}

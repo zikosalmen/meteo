@@ -7,6 +7,7 @@ import { useState , useContext , useEffect } from "react"
 import {WeatherContext} from "./comps/data"
 import { Mode} from "./comps/darkmode";
 import OtherDays from "./comps/other_days"
+import Map from "./comps/map"
 
 
 
@@ -37,6 +38,7 @@ useEffect(() => {
     <Header />
     <Main/>
     <OtherDays/>
+    <Map/>
     <Footer/>
     </div>
     

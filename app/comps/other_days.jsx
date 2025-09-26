@@ -20,7 +20,7 @@ export default function OtherDays(){
         .then(res => res.json())
         .then(Data => {
     const dailyData = [];
-    for (let i = 0; i < Data.list.length; i += 8) {
+    if(Data.list)for (let i = 0; i < Data.list.length; i += 8) {
       const dayData = Data.list.slice(i, i + 8);
       const temps = dayData.map(item => item.main.temp);
       dailyData.push({
@@ -115,6 +115,7 @@ function Card({etat}){
             <div className={`col-span-3 ${dark?`text-slate-300`:`text-slate-800`}`}>
              <Days ch={e.date}/>
              </div>
+             
              <div className={` ${dark?`text-white`:`text-stone-700`}`} >
             <p className="flex text-3xl items-center gap-1 ">{e.temp_max} °C 
               <Image
