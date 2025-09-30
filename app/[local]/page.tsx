@@ -27,22 +27,19 @@ export default function Page() {
   }, [data?.weather]);
 
   return (
-    <>
-      <div
-        className={`${dark ? `brightness-70` : ``}`}
-        style={{
-          backgroundImage: `url(/${bg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "120vh",
-        }}
-      >
-        <Header />
-        <Main />
-        <OtherDays />
-        <Map />
-        <Footer />
-      </div>
-    </>
-  );
+    <div
+    className={`${dark ? "brightness-70" : ""} bg-cover bg-center min-h-screen w-full`}
+    style={{
+      backgroundImage: `url(/${bg})`,
+    }}
+  >
+    <div >
+      <Header />
+      <Main />
+      <OtherDays />
+      <Map />
+      <Footer />
+    </div>
+  </div>
+);
 }
