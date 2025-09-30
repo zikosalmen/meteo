@@ -45,7 +45,7 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
   
  useEffect(()=>{
     localStorage.setItem("ville",JSON.stringify(ville))
-  },[ville])
+  },[ville,langue])
 
 
 
