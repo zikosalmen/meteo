@@ -29,15 +29,18 @@ export default function Main() {
   const [etat, setetat] = useState("nuages.png");
 
   useEffect(() => {
-    Icons.map((a) => {
-      if (a.main === data?.weather?.[0].main) {
-        setetat(a.image);
-      }
-    },[etat]);
+    Icons.map(
+      (a) => {
+        if (a.main === data?.weather?.[0].main) {
+          setetat(a.image);
+        }
+      },
+      [etat]
+    );
   }, [data?.weather]);
 
-  if (!t ) return "landing ...";
-  console.log(etat)
+  if (!t) return "landing ...";
+  console.log(etat);
 
   return (
     <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-2.5">
@@ -45,7 +48,9 @@ export default function Main() {
         <div className="flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-12">
           <span>
             <div className="flex items-center gap-3 sm:gap-5">
-              <p className="text-4xl sm:text-5xl">{data?.main?.temp?.toFixed(0)}</p>
+              <p className="text-4xl sm:text-5xl">
+                {data?.main?.temp?.toFixed(0)}
+              </p>
               {t("c")}
               <Image
                 src="/termo.png"
@@ -95,18 +100,22 @@ export default function Main() {
       </Card>
 
       <Card className="sm:col-span-2  lg:col-span-2 lg:row-span-2">
-        <TemperatureChart  />
+        <TemperatureChart />
       </Card>
 
       <Card>
         <div className="flex items-center justify-between gap-4">
-          <p className="text-base sm:text-lg">{t(data?.weather?.[0]?.description ?? "—")}</p>
+          <p className="text-base sm:text-lg">
+            {t(data?.weather?.[0]?.description ?? "—")}
+          </p>
           <Image
             src={`/${etat}`}
             width={200}
             height={200}
             alt="etat"
-            className={`w-12 h-12 sm:w-16 sm:h-16 ${dark ? `brightness-70` : ``}`}
+            className={`w-12 h-12 sm:w-16 sm:h-16 ${
+              dark ? `brightness-70` : ``
+            }`}
           />
         </div>
         <div className="flex items-center justify-between gap-4">
