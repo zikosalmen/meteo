@@ -57,7 +57,7 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
         .then((res) => setData(res))
         .catch((err) => console.error(err));
     }
-  }, [ville]);
+  }, [ville,langue]);
 
   return (
     <WeatherContext.Provider value={{ data, ville, setVille }}>
