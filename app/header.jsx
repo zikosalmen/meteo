@@ -5,24 +5,33 @@ import { gouvs } from "./comps/gouvs";
 import { WeatherContext } from "./comps/data";
 import { useEffect, useState, useContext } from "react";
 import { Mode} from "./comps/darkmode";
+import {Lang} from "./comps/lang-param";
+import { useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+
 
 export default function Header() {
-  const { data, ville, setVille } = useContext(WeatherContext);
+  const { ville, setVille } = useContext(WeatherContext);
+  const {dark,setDark}=useContext(Mode)
+  const [mounted, setMounted] = useState(false);
+  const { t  } = useContext(Lang);
+  const router = useRouter();
+
+  const param = useParams();
+  const langue = Array.isArray(param?.local) ? param.local[0] : param?.local || "ar";
+    
  const handville = (e) => {
   setVille(e.target.value);
 };
-
-  const {dark,setDark}=useContext(Mode)
-
-  const [mounted, setMounted] = useState(false);
-
-
   useEffect(() => {
     setMounted(true);
   }, []);
-
+ const handLang=(e)=>{
+  router.push(e.target.value)
+ }
+ 
+  if(!t)return "landing ...";
   if (!mounted) return null;
-
   return (
     <header
       className={`flex items-center justify-between backdrop-invert p-3 ${
@@ -39,12 +48,15 @@ export default function Header() {
           height={40}
           className="object-contain"
         />
-        <p className="text-xl font-bold">{dark ? "Meteo 🌙" : "Meteo ☀️"}</p>
+        <p className="text-xl font-bold">
+  {t("meteo") + (dark ? " 🌙" : " ☀️")}
+</p>
+
       </Link>
 
       <span className={`flex items-center gap-1 py-1 px-3 rounded text-sm
        backdrop-invert backdrop-opacity-5 ${dark? `text-white  bg-black/30 `:` bg-white/30 text-black`}  `}>
-        ville:
+        {t("ville")}
         <select
           value={ville}
           onChange={handville}
@@ -52,8 +64,17 @@ export default function Header() {
         >
           {gouvs.map((g) => (
             <option  
-            className={` bg-transparent ${dark?` text-black`:`text-black`}`} key={g.id} > {g.name}</option>
+            className={` bg-transparent ${dark?` text-black`:`text-black`}`} key={g.id} > {t(g.name)}</option>
           ))}
+        </select>
+      </span>
+      <span>
+        <select name="" id="" value={langue} onChange={handLang}
+        
+        >{t("langues")}
+          <option  className={` bg-transparent ${dark?` text-black`:`text-black`}`} value="fr" >francais</option>
+          <option  className={` bg-transparent ${dark?` text-black`:`text-black`}`} value="ar" >arabe</option>
+          <option  className={` bg-transparent ${dark?` text-black`:`text-black`}`} value="en" >anglais</option>
         </select>
       </span>
 
@@ -61,7 +82,7 @@ export default function Header() {
         className="flex items-center gap-1 py-1 px-3 rounded bg-gray-200 bg-opacity-60 hover:bg-opacity-80 text-black text-sm"
         onClick={() => setDark(!dark)}
       >
-        <span>{dark ? "🌙 Dark" : "☀️ Light"}</span>
+        <span>{dark ? "🌙"+ t("dark-mode") : "☀️"+t("light-mode")}</span>
       </button>
     </header>
   );

@@ -1,5 +1,7 @@
 "use client"
-import { createContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useState, useEffect, ReactNode} from "react";
+import { useParams } from "next/navigation";
+
 
 
 interface WeatherData {
@@ -26,9 +28,11 @@ interface WeatherProviderProps {
 
 
 export default function WeatherProvider({ children }: WeatherProviderProps) {
+  const param = useParams();
+  const langue = Array.isArray(param?.local) ? param.local[0] : param?.local || "ar";
   
   const [data, setData] = useState<WeatherData | null>(null);
-  const langue = "fr";
+
    useEffect(()=>{
     const vl=localStorage.getItem("ville")
     if(vl){
@@ -42,6 +46,8 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
  useEffect(()=>{
     localStorage.setItem("ville",JSON.stringify(ville))
   },[ville])
+
+
 
   useEffect(() => {
     if (ville) {

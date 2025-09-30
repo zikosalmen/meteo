@@ -41,7 +41,7 @@ export const Description = [
   { id: 621, desc: "averses de neige", src: "montagne.png" },
 
 
-  { id: 200, desc: "orage avec pluie légère", src: "orage.png" },
+  { id: 200, desc: "orage avec pluie légère", src: "z" },
   { id: 201, desc: "orage avec pluie", src: "orage (1).png" },
   { id: 202, desc: "orage avec pluie forte", src: "orage (1).png" },
   { id: 210, desc: "orage léger", src: "tempete (1).png" },

@@ -3,6 +3,7 @@
 import { useState, useEffect, useContext } from "react";
 import { WeatherContext } from "./data";
 import { Mode} from "./darkmode";
+import {Lang} from "./lang-param";
 
 export default function TemperatureChart() {
   const [TimeNow, setTimeNow] = useState({});
@@ -12,6 +13,7 @@ export default function TemperatureChart() {
   const now = new Date();
   const hours = now.getHours();
   const minutes = now.getMinutes();
+  const { t} = useContext(Lang);
   
 
 useEffect(() => {
@@ -49,7 +51,7 @@ useEffect(() => {
       ${dark?` text-white `:` text-black`
 
     } `}>
-        Évolution des températures 
+        {t("Évolution des températures")}
       </h2>
        <ResponsiveContainer width="100%" height={300}>
   <ComposedChart data={det} margin={{ top: 20, right: 5, bottom: 20, left: 5 }}>

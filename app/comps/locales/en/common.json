@@ -1,0 +1,125 @@
+{
+  "welcome": "welcome",
+  "about": "À propos",
+  "meteo":"weather",
+  "dark-mode":"dark-mode",
+  "light-mode":"light-mode",
+  "rights":"© 2025 Meteo. All rights reserved",
+  "langues":"the language",
+
+  "ville":"city",
+
+  "Évolution des températures": "Temperature evolution",
+
+  "ciel dégagé": "Clear sky",
+  "partiellement nuageux": "Partly cloudy",
+  "peu nuageux": "Scattered clouds",
+  "nuageux": "Broken clouds",
+  "couvert": "Overcast clouds",
+
+  "légère pluie": "Light rain",
+  "pluie modérée": "Moderate rain",
+  "forte pluie": "Heavy rain",
+  "très forte pluie": "Very heavy rain",
+  "pluie extrême": "Extreme rain",
+  "averses de pluie": "Shower rain",
+  "averses de pluie intenses": "Heavy shower rain",
+  "averses irrégulières": "Ragged shower rain",
+
+  "bruine légère": "Light drizzle",
+  "bruine": "Drizzle",
+  "bruine forte": "Heavy drizzle",
+  "bruine avec pluie": "Drizzle rain",
+  "averses de bruine": "Shower drizzle",
+
+  "orage avec pluie légère": "Thunderstorm with light rain",
+  "orage avec pluie": "Thunderstorm with rain",
+  "orage avec pluie forte": "Thunderstorm with heavy rain",
+  "orage léger": "Light thunderstorm",
+  "orage violent": "Heavy thunderstorm",
+  "orage irrégulier": "Ragged thunderstorm",
+  "orage avec bruine": "Thunderstorm with drizzle",
+
+  "neige légère": "Light snow",
+  "neige": "Snow",
+  "forte neige": "Heavy snow",
+  "neige fondue": "Sleet",
+  "averses de neige": "Shower snow",
+  "fortes averses de neige": "Heavy shower snow",
+  "pluie et neige": "Rain and snow",
+
+  "brume": "Mist",
+  "brouillard": "Fog",
+  "fumée": "Smoke",
+  "ciel voilé": "Haze",
+  "poussière": "Dust",
+  "sable": "Sand",
+  "cendres volcaniques": "Volcanic ash",
+  "rafales": "Squalls",
+  "tornade": "Tornado",
+
+
+  "direction": "Direction",
+  "c": "°C",
+  "humidite": "Humidity",
+  "vent": "Wind",
+  "m/s": "m/s",
+  "jan": "January",
+  "feb": "February",
+  "mar": "March",
+  "apr": "April",
+  "may": "May",
+  "jun": "June",
+  "jul": "July",
+  "aug": "August",
+  "sep": "September",
+  "oct": "October",
+  "nov": "November",
+  "dec": "December",
+
+  "mon": "Monday",
+  "tue": "Tuesday",
+  "wed": "Wednesday",
+  "thu": "Thursday",
+  "fri": "Friday",
+  "sat": "Saturday",
+  "sun": "Sunday",
+
+
+  "Tunis": "Tunis",
+  "Ariana": "Ariana",
+  "Ben Arous": "Ben Arous",
+  "Manouba": "Manouba",
+  "Nabeul": "Nabeul",
+  "Zaghouan": "Zaghouan",
+  "Bizerte": "Bizerte",
+  "Béja": "Béja",
+  "Jendouba": "Jendouba",
+  "Kef": "Kef",
+  "Siliana": "Siliana",
+  "Sousse": "Sousse",
+  "Monastir": "Monastir",
+  "Mahdia": "Mahdia",
+  "Sfax": "Sfax",
+  "Kairouan": "Kairouan",
+  "Kasserine": "Kasserine",
+  "Sidi Bouzid": "Sidi Bouzid",
+  "Gabès": "Gabès",
+  "Medenine": "Médenine",
+  "Tataouine": "Tataouine",
+  "Gafsa": "Gafsa",
+  "Tozeur": "Tozeur",
+  "Kebili": "Kébili",
+
+  "N":"N",
+ "S":"S",
+ "W":"W",
+ "E":"E"
+}
+
+
+
+
+
+  
+

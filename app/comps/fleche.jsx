@@ -1,7 +1,9 @@
 import { Mode} from "./darkmode";
 import {   useContext} from "react";
+import {Lang} from "./lang-param";
 export default function Compass({ angle }) {
     const{dark}=useContext(Mode)
+    const { t } = useContext(Lang);
   return (
     <div className="flex flex-col items-center gap-4">
 
@@ -27,10 +29,10 @@ export default function Compass({ angle }) {
         </svg>
 
       
-        <span className="absolute top-2 left-1/2 transform text-sm -translate-x-1/2 font-bold">N</span>
-        <span className="absolute bottom-2 left-1/2 transform text-sm -translate-x-1/2 font-bold">S</span>
-        <span className="absolute top-1/2 right-2 transform text-sm -translate-y-1/2 font-bold">E</span>
-        <span className="absolute top-1/2 left-2 transform text-sm -translate-y-1/2 font-bold">W</span>
+        <span className="absolute top-2 left-1/2 transform text-sm -translate-x-1/2 font-bold">{t("N")}</span>
+        <span className="absolute bottom-2 left-1/2 transform text-sm -translate-x-1/2 font-bold">{t("S")}</span>
+        <span className="absolute top-1/2 right-2 transform text-sm -translate-y-1/2 font-bold">{t("E")}</span>
+        <span className="absolute top-1/2 left-2 transform text-sm -translate-y-1/2 font-bold">{t("W")}</span>
       </div>
 
      

@@ -1,0 +1,125 @@
+{
+  "welcome": "مرحبا بك في موقعي",
+  "about": "حول الموقع",
+  "meteo":"حالة الطقس",
+  "dark-mode":"الوضع المظلم",
+  "light-mode":"وضع الضوء",
+  "ville":"المدينة",
+  "rights":"©  ميتيو 2025. جميع الحقوق محفوظة",
+  "langues":"اللغة",
+  
+  
+
+  "Tunis": "تونس",
+  "Ariana": "أريانة",
+  "Ben Arous": "بن عروس",
+  "Manouba": "منوبة",
+  "Nabeul": "نابل",
+  "Zaghouan": "زغوان",
+  "Bizerte": "بنزرت",
+  "Béja": "باجة",
+  "Jendouba": "جندوبة",
+  "Kef": "الكاف",
+  "Siliana": "سليانة",
+  "Sousse": "سوسة",
+  "Monastir": "المنستير",
+  "Mahdia": "المهدية",
+  "Sfax": "صفاقس",
+  "Kairouan": "القيروان",
+  "Kasserine": "القصرين",
+  "Sidi Bouzid": "سيدي بوزيد",
+  "Gabès": "قابس",
+  "Medenine": "مدنين",
+  "Tataouine": "تطاوين",
+  "Gafsa": "قفصة",
+  "Tozeur": "توزر",
+  "Kebili": "قبلي",
+
+  "direction":"اتجاه",
+  "c":"درجة",
+ "humidite" :"رطوبة",
+ "vent":"رياح",
+ "m/s":"م / ث",
+
+ "N":"شمال",
+ "S":"جنوب",
+ "W":"الغرب",
+ "E":"شرق",
+ "Évolution des températures":"تطور درجات الحرارة",
+
+
+  "ciel dégagé": "سماء صافية",
+  "partiellement nuageux": "غائم جزئيًا",
+  "peu nuageux": "غيوم متناثرة",
+  "nuageux": "غيوم متقطعة",
+  "couvert": "سماء ملبدة بالغيوم",
+
+ 
+  "légère pluie": "مطر خفيف",
+  "pluie modérée": "مطر معتدل",
+  "forte pluie": "مطر غزير",
+  "très forte pluie": "مطر شديد",
+  "pluie extrême": "مطر متطرف",
+  "averses de pluie": "زخات مطر",
+  "averses de pluie intenses": "زخات مطر قوية",
+  "averses irrégulières": "زخات مطر متقطعة",
+
+  
+  "bruine légère": "رذاذ خفيف",
+  "bruine": "رذاذ",
+  "bruine forte": "رذاذ كثيف",
+  "bruine avec pluie": "رذاذ مع مطر",
+  "averses de bruine": "زخات رذاذ",
+
+  "orage avec pluie légère": "عاصفة رعدية مع مطر خفيف",
+  "orage avec pluie": "عاصفة رعدية مع مطر",
+  "orage avec pluie forte": "عاصفة رعدية مع مطر غزير",
+  "orage léger": "عاصفة رعدية خفيفة",
+  "orage violent": "عاصفة رعدية قوية",
+  "orage irrégulier": "عاصفة رعدية متقطعة",
+  "orage avec bruine": "عاصفة رعدية مع رذاذ",
+
+ 
+  "neige légère": "ثلج خفيف",
+  "neige": "ثلج",
+  "forte neige": "ثلج كثيف",
+  "neige fondue": "مطر ثلجي",
+  "averses de neige": "زخات ثلج",
+  "fortes averses de neige": "زخات ثلج كثيفة",
+  "pluie et neige": "مطر وثلج",
+
+ 
+  "brume": "ضباب",
+  "brouillard": "ضباب كثيف",
+  "fumée": "دخان",
+  "ciel voilé": "سماء محجوبة",
+  "poussière": "غبار",
+  "sable": "رمل",
+  "cendres volcaniques": "رماد بركاني",
+  "rafales": "هبات رياح قوية",
+  "tornade": "إعصار",
+
+
+  "jan": "يناير",
+  "feb": "فبراير",
+  "mar": "مارس",
+  "apr": "أبريل",
+  "may": "مايو",
+  "jun": "يونيو",
+  "jul": "يوليو",
+  "aug": "أغسطس",
+  "sep": "سبتمبر",
+  "oct": "أكتوبر",
+  "nov": "نوفمبر",
+  "dec": "ديسمبر",
+
+  "mon": "الاثنين",
+  "tue": "الثلاثاء",
+  "wed": "الأربعاء",
+  "thu": "الخميس",
+  "fri": "الجمعة",
+  "sat": "السبت",
+  "sun": "الأحد"
+
+
+}

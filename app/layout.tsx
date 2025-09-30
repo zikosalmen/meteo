@@ -4,7 +4,7 @@ import "./globals.css";
 import WeatherProvider from "./comps/data"
 import DateProvider from "./comps/time"
 import InfoMode from "./comps/darkmode"
-
+import Lang from "./comps/lang-param"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Lang>
         <WeatherProvider>
           <DateProvider>
             <InfoMode>
@@ -38,6 +39,7 @@ export default function RootLayout({
             </InfoMode>
           </DateProvider>
         </WeatherProvider>
+        </Lang>
         
       </body>
     </html>
