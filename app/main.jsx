@@ -26,7 +26,7 @@ export default function Main() {
     );
   }
 
-  const [etat, setetat] = useState("/nuages.png");
+  const [etat, setetat] = useState("nuages.png");
 
   useEffect(() => {
     Icons.map((a) => {
