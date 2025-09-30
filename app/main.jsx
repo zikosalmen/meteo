@@ -33,10 +33,11 @@ export default function Main() {
       if (a.main === data?.weather?.[0].main) {
         setetat(a.image);
       }
-    });
+    },[etat]);
   }, [data?.weather]);
 
-  if (!t) return "landing ...";
+  if (!t ) return "landing ...";
+  console.log(etat)
 
   return (
     <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-2.5">
@@ -93,8 +94,8 @@ export default function Main() {
         </div>
       </Card>
 
-      <Card className="sm:col-span-2 lg:col-span-2 lg:row-span-2">
-        <TemperatureChart />
+      <Card className="sm:col-span-2  lg:col-span-2 lg:row-span-2">
+        <TemperatureChart  />
       </Card>
 
       <Card>

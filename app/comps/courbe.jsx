@@ -53,7 +53,7 @@ useEffect(() => {
     } `}>
         {t("Évolution des températures")}
       </h2>
-       <ResponsiveContainer width="100%" height={300}>
+       <ResponsiveContainer width="100%" height="85%">
   <ComposedChart data={det} margin={{ top: 20, right: 5, bottom: 20, left: 5 }}>
     <CartesianGrid stroke="transparent"  />
     <XAxis dataKey="time" scale="point"
