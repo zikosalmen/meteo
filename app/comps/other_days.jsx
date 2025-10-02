@@ -98,11 +98,11 @@ export default function OtherDays(){
             ${dark?`bg-gray-700/30 text-slate-300`:`bg-blue-300/30 text-slate-800`}`}
         >
           <div className="col-span-3"><Days ch={e.date}/></div>
-          <div className={`${dark?`text-white`:`text-stone-700`}`} >
-            <p className="flex text-3xl items-center gap-1 ">{e.temp_max} °C 
+          <div className={`${dark?`text-white`:`text-stone-800`}`} >
+            <p className="flex text-3xl items-center gap-1 ">{e.temp_max} <p className="text-xl">{t("c")}</p>
               <Image src="/haute-temperature.png" height={100} width={50} alt="not found" draggable={false}/>
             </p>
-            <p className="flex text-3xl items-center gap-1 ">{e.temp_min} °C
+            <p className="flex text-3xl items-center gap-1 ">{e.temp_min} <p className="text-xl">{t("c")}</p>
               <Image src="/basse-temperature.png" height={100} width={50} alt="not found" draggable={false}/>
             </p>
           </div>
