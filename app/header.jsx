@@ -71,13 +71,14 @@ export default function Header() {
     </select>
   </span>
 
-  <span>
+  <span className={`flex items-center gap-1 sm:gap-2 py-1 px-3 rounded text-sm
+                   backdrop-invert backdrop-opacity-5 ${dark? "text-white bg-black/30":"bg-white/30 text-black"}`}>
     <select
       name=""
       id=""
       value={langue}
       onChange={handLang}
-      className={`text-sm sm:text-base bg-gray-200 bg-opacity-60 hover:bg-opacity-80 ${dark?`bg-black/25 text-black`:``}`}
+      className={`bg-transparent ${dark? "text-white" : "text-black"}`}
     >
       {t("langues")}
       <option className={`bg-transparent ${dark? "text-black" : "text-black"}`} value="fr">francais</option>
