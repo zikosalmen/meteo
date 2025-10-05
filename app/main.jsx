@@ -9,7 +9,7 @@ import Image from "next/image";
 import Flech from "./comps/fleche";
 import { Lang } from "./comps/lang-param";
 import Photo from "./comps/gouvs_photos.jsx";
-import { Cloud } from 'lucide-react';
+import { Cloud } from 'lucide-react'
 
 export default function Main() {
   const { data, ville } = useContext(WeatherContext);
