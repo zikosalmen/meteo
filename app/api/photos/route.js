@@ -5,7 +5,7 @@ export async function GET(request) {
     const ville = searchParams.get("ville") || "Tunis";
 
     const apiKey = process.env.PH_KEY;
-    const url = `https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${ville}&srnamespace=6&format=json&origin=*`;
+    const url = `https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${ville}-ville&srnamespace=6&format=json&origin=*`;
     const res = await fetch(url);
     const data = await res.json();
 

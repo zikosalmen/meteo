@@ -8,7 +8,8 @@ type Props = {
 
 type Datetype = {
   date: string;
-  time:string
+  time:string;
+  now:number
 };
 
 export const TimeContext = createContext<Datetype | undefined>(undefined);
@@ -36,7 +37,8 @@ const value: Datetype = {
     minute: "2-digit",
     hour12: false,
     timeZone: "UTC" 
-  })
+  }),
+  now:Date.now()
 };
 
   return (

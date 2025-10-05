@@ -47,7 +47,7 @@ export default function Main() {
   <Cloud className="w-12 h-12 text-blue-600 animate-bounce delay-200" />
 </div>)
   
-  console.log(etat);
+
 
   return (
     <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-2.5">

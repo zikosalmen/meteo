@@ -30,9 +30,7 @@ export default function Map() {
 
         let ville = gouvernorat.substring(12,16);
         setVille(ville);
-        console.log(ville)
         localStorage.setItem("ville", JSON.stringify(ville));
-        console.log("ville: " + ville);
       })
       .catch((err) => console.error(err));
   }, [lat, lon, setVille]);
@@ -42,8 +40,6 @@ export default function Map() {
       navigator.geolocation.getCurrentPosition((pos) => {
         setLat(pos.coords.latitude);
         setLon(pos.coords.longitude);
-        console.log("Latitude:", pos.coords.latitude);
-        console.log("Longitude:", pos.coords.longitude);
       });
     }
   }, []);

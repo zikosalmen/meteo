@@ -8,14 +8,18 @@ import { Mode} from "./comps/darkmode";
 import {Lang} from "./comps/lang-param";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
+import { TimeContext } from "./comps/time";
+
 
 
 export default function Header() {
-  const { ville, setVille } = useContext(WeatherContext);
+  const realDate = useContext(TimeContext);
+  const {data, ville, setVille } = useContext(WeatherContext);
   const {dark,setDark}=useContext(Mode)
   const [mounted, setMounted] = useState(false);
   const { t  } = useContext(Lang);
   const router = useRouter();
+  const [ciel,setCiel]=useState("")
 
   const param = useParams();
   const langue = Array.isArray(param?.local) ? param.local[0] : param?.local || "ar";
@@ -30,10 +34,18 @@ export default function Header() {
   router.push(e.target.value)
  }
  
-  if (!t) return  null
-    
 
+ const sunset = data?.sys?.sunset * 1000;   
+const sunrise = data?.sys?.sunrise * 1000; 
+useEffect(()=>{
+if (realDate.now > sunrise && realDate.now < sunset) {
+  setCiel("☀️");
+} else {
+  setCiel("🌙");
+}},[60000]) 
+  if (!t) return  null
   if (!mounted) return null;
+
   return (<header
   className={`flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3 
               backdrop-invert p-3 
@@ -50,7 +62,7 @@ export default function Header() {
       className="object-contain"
     />
     <p className="text-lg sm:text-xl font-bold">
-      {t("meteo") + (dark ? " 🌙" : " ☀️")}
+      {t("meteo") + ciel}
     </p>
   </Link>
 
