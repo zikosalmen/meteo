@@ -30,7 +30,9 @@ export default function Header() {
   router.push(e.target.value)
  }
  
-  if(!t)return "landing ...";
+  if (!t) return  null
+    
+
   if (!mounted) return null;
   return (<header
   className={`flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3 

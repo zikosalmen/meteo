@@ -9,6 +9,7 @@ import { Mode } from "../comps/darkmode";
 import OtherDays from "../comps/other_days";
 import Map from "../comps/map";
 
+
 export default function Page() {
   const weatherContext = useContext(WeatherContext);
   const ModeType = useContext(Mode);
@@ -39,6 +40,7 @@ export default function Page() {
       <OtherDays />
       <Map />
       <Footer />
+      
     </div>
   </div>
 );

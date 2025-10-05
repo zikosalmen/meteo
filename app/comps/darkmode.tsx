@@ -3,7 +3,7 @@ import { useState, createContext, ReactNode, useEffect } from "react";
 
 type modeType = {
   dark?: boolean;
-  setDark?: (ville: boolean) => void;
+  setDark?: (dark: boolean) => void;
 };
 export const Mode = createContext<undefined | modeType>(undefined);
 
@@ -27,7 +27,9 @@ useEffect(() => {
 
   return (
     <>
-      <Mode.Provider value={{ dark, setDark }}>{children}</Mode.Provider>
+      <Mode.Provider value={{ dark, setDark }}>
+        {children}
+        </Mode.Provider>
     </>
   );
 }

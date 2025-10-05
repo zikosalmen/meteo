@@ -18,14 +18,11 @@ interface WeatherContextType {
   setVille?: (ville: string) => void;
 }
 
-
 export const WeatherContext = createContext<WeatherContextType | null>(null);
-
 
 interface WeatherProviderProps {
   children: ReactNode;
 }
-
 
 export default function WeatherProvider({ children }: WeatherProviderProps) {
   const param = useParams();
@@ -49,15 +46,11 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
 
 
 
-  useEffect(() => {
-    if (ville) {
-      const lien = `https://api.openweathermap.org/data/2.5/weather?q=${ville}&appid=4d541dde75c61a4d8667a35fdd72ea60&units=metric&lang=${langue}`;
-      fetch(lien)
-        .then((res) => res.json())
-        .then((res) => setData(res))
-        .catch((err) => console.error(err));
-    }
-  }, [ville,langue]);
+ useEffect(() => {
+    fetch(`api/weather?ville=${ville}&lang=${langue}`)
+      .then((res) => res.json())
+      .then((json) => setData(json));
+  }, [ville, langue]);
 
   return (
     <WeatherContext.Provider value={{ data, ville, setVille }}>

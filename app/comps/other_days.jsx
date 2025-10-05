@@ -17,7 +17,7 @@ export default function OtherDays(){
 
   useEffect(() => {
     if (!ville) return;
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${ville}&appid=4d541dde75c61a4d8667a35fdd72ea60&units=metric&lang=fr`)
+    fetch(`api/forecast?ville=${ville}`)
       .then(res => res.json())
       .then(Data => {
         const dailyData = [];

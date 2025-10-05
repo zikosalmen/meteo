@@ -8,6 +8,8 @@ import { Icons } from "./comps/icons";
 import Image from "next/image";
 import Flech from "./comps/fleche";
 import { Lang } from "./comps/lang-param";
+import Photo from "./comps/gouvs_photos.jsx";
+import { Cloud } from 'lucide-react';
 
 export default function Main() {
   const { data, ville } = useContext(WeatherContext);
@@ -18,7 +20,7 @@ export default function Main() {
   function Card({ children, className }) {
     return (
       <div
-        className={`backdrop-invert backdrop-opacity-5 rounded-3xl shadow-2xl p-3 sm:p-4 text-base sm:text-xl ${className}
+        className={`backdrop-invert backdrop-opacity-5 rounded-3xl shadow-2xl p-3 sm:p-2 text-base sm:text-xl ${className}
            ${dark ? ` bg-black/30 text-white` : " bg-white/30 text-black"}`}
       >
         {children}
@@ -39,30 +41,40 @@ export default function Main() {
     );
   }, [data?.weather]);
 
-  if (!t) return "landing ...";
+  if (!t ||!data) return( <div className="flex gap-2 justify-center items-center h-64">
+  <Cloud className="w-12 h-12 text-blue-600 animate-bounce" />
+  <Cloud className="w-16 h-16 text-blue-400 animate-bounce delay-100 " />
+  <Cloud className="w-12 h-12 text-blue-600 animate-bounce delay-200" />
+</div>)
+  
   console.log(etat);
 
   return (
     <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-2.5">
       <Card className="lg:col-span-2">
-        <div className="flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-12">
-          <span>
-            <div className="flex items-center gap-3 sm:gap-5">
-              <p className="text-4xl sm:text-5xl">
-                {data?.main?.temp?.toFixed(0)}
-              </p>
-              {t("c")}
-              <Image
-                src="/termo.png"
-                width={200}
-                height={100}
-                alt="temp"
-                className={`w-12 h-16 sm:w-16 sm:h-20 ${dark ? `sepia` : ``}`}
-              />
-            </div>
-          </span>
+        <div
+          className="
+      flex flex-col sm:flex-col lg:flex-row lg:items-center lg:justify-between 
+      gap-6 sm:gap-8 lg:gap-12
+    "
+        >
 
-          <span className="flex flex-col gap-2">
+          <div className="flex items-center justify-center gap-3 sm:gap-5">
+            <p className="text-4xl sm:text-5xl">
+              {data?.main?.temp?.toFixed(0)}
+            </p>
+            {t("c")}
+            <Image
+              src="/termo.png"
+              width={200}
+              height={100}
+              alt="temp"
+              className={`w-12 h-16 sm:w-16 sm:h-20 ${dark ? "sepia" : ""}`}
+            />
+          </div>
+
+
+          <div className="flex flex-col items-center sm:items-center lg:items-start gap-2">
             <div className="flex items-center gap-2 sm:gap-3">
               <p className="text-2xl sm:text-3xl font-bold">{t(ville)}</p>
               <Image
@@ -70,7 +82,7 @@ export default function Main() {
                 width={200}
                 height={100}
                 alt="loc"
-                className={`w-6 h-8 sm:w-8 sm:h-10 ${dark ? `sepia` : ``}`}
+                className={`w-6 h-8 sm:w-8 sm:h-10 ${dark ? "sepia" : ""}`}
               />
             </div>
 
@@ -81,7 +93,7 @@ export default function Main() {
                 width={200}
                 height={100}
                 alt="date"
-                className={`w-5 h-6 sm:w-6 sm:h-8 ${dark ? `sepia` : ``}`}
+                className={`w-5 h-6 sm:w-6 sm:h-8 ${dark ? "sepia" : ""}`}
               />
             </p>
 
@@ -92,10 +104,14 @@ export default function Main() {
                 width={200}
                 height={100}
                 alt="time"
-                className={`w-5 h-6 sm:w-6 sm:h-8 ${dark ? `sepia` : ``}`}
+                className={`w-5 h-6 sm:w-6 sm:h-8 ${dark ? "sepia" : ""}`}
               />
             </p>
-          </span>
+          </div>
+
+          <div className="w-64 h-48 sm:h-40 lg:w-60 mx-auto lg:mx-0 rounded-xl overflow-hidden flex justify-center items-center">
+            <Photo />
+          </div>
         </div>
       </Card>
 
@@ -104,7 +120,7 @@ export default function Main() {
       </Card>
 
       <Card>
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-10">
           <p className="text-base sm:text-lg">
             {t(data?.weather?.[0]?.description ?? "—")}
           </p>

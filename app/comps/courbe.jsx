@@ -26,9 +26,7 @@ export default function TemperatureChart() {
   useEffect(() => {
     if (!ville) return;
 
-    fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${ville}&appid=4d541dde75c61a4d8667a35fdd72ea60&units=metric`
-    )
+    fetch(`api/forecast?ville=${ville}`)
       .then((res) => res.json())
       .then((Data) => {
         if (!Data.list) return;
@@ -40,7 +38,6 @@ export default function TemperatureChart() {
             minute: "2-digit",
           }),
         }));
-
         const part2 = Data.list.slice(4, 7).map((item) => ({
           temp: item.main.temp,
           time: new Date(item.dt * 1000).toLocaleTimeString([], {
@@ -48,7 +45,6 @@ export default function TemperatureChart() {
             minute: "2-digit",
           }),
         }));
-
         const nowValue = {
           temp: data?.main?.temp?.toFixed(0),
           time: `${hours}:${minutes}`,
@@ -66,7 +62,7 @@ export default function TemperatureChart() {
       >
         {t("Évolution des températures")}
       </h2>
-      <div className="w-full h-[240px] sm:h-[85%] lg:h-[105%]">
+      <div className="w-full h-[240px] sm:h-[85%] lg:h-[115%]">
         <ResponsiveContainer width="100%" height="100%" className="sm:h-[85%]">
           <ComposedChart
             data={det}

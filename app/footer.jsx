@@ -4,7 +4,7 @@ import {Lang} from "./comps/lang-param";
 export default function Footer(){
     const{dark}=useContext(Mode)
     const { t} = useContext(Lang);
-    if(!t)return "landing..."
+    if(!t)return null
 
     return(
         <>
