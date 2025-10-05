@@ -19,7 +19,7 @@ export default function Header() {
   const [mounted, setMounted] = useState(false);
   const { t  } = useContext(Lang);
   const router = useRouter();
-  const [ciel,setCiel]=useState("")
+  const [ciel,setCiel]=useState("☀️")
 
   const param = useParams();
   const langue = Array.isArray(param?.local) ? param.local[0] : param?.local || "ar";
@@ -38,11 +38,11 @@ export default function Header() {
  const sunset = data?.sys?.sunset * 1000;   
 const sunrise = data?.sys?.sunrise * 1000; 
 useEffect(()=>{
-if (realDate.now > sunrise && realDate.now < sunset) {
-  setCiel("☀️");
-} else {
+if (realDate.now < sunrise && realDate.now > sunset) {
   setCiel("🌙");
-}},[60000]) 
+} else {
+  setCiel("☀️");
+}},[ville]) 
   if (!t) return  null
   if (!mounted) return null;
 
