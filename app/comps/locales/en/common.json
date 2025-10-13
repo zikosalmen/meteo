@@ -86,35 +86,37 @@
   "sun": "Sunday",
 
 
-  "Tunis": "Tunis",
-  "Ariana": "Ariana",
-  "Ben Arous": "Ben Arous",
-  "Manouba": "Manouba",
-  "Nabeul": "Nabeul",
-  "Zaghouan": "Zaghouan",
-  "Bizerte": "Bizerte",
-  "Béja": "Béja",
-  "Jendouba": "Jendouba",
-  "Kef": "Kef",
-  "Siliana": "Siliana",
-  "Sousse": "Sousse",
-  "Monastir": "Monastir",
-  "Mahdia": "Mahdia",
-  "Sfax": "Sfax",
-  "Kairouan": "Kairouan",
-  "Kasserine": "Kasserine",
-  "Sidi Bouzid": "Sidi Bouzid",
-  "Gabès": "Gabès",
-  "Medenine": "Médenine",
-  "Tataouine": "Tataouine",
-  "Gafsa": "Gafsa",
-  "Tozeur": "Tozeur",
-  "Kebili": "Kébili",
-
+ 
   "N":"N",
  "S":"S",
  "W":"W",
- "E":"E"
+ "E":"E",
+
+  "تونس": "Tunis",
+  "أريانة": "Ariana",
+  "بن عروس": "Ben Arous",
+  "منوبة": "Manouba",
+  "نابل": "Nabeul",
+  "زغوان": "Zaghouan",
+  "بنزرت": "Bizerte",
+  "باجة": "Béja",
+  "جندوبة": "Jendouba",
+  "الكاف": "Kef",
+  "سليانة": "Siliana",
+  "سوسة": "Sousse",
+  "المنستير": "Monastir",
+  "المهدية": "Mahdia",
+  "صفاقس": "Sfax",
+  "القيروان": "Kairouan",
+  "القصرين": "Kasserine",
+  "سيدي بوزيد": "Sidi Bouzid",
+  "قابس": "Gabès",
+  "مدنين": "Medenine",
+  "تطاوين": "Tataouine",
+  "قفصة": "Gafsa",
+  "توزر": "Tozeur",
+  "قبلي": "Kebili"
+
 }
 
 

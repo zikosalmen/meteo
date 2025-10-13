@@ -32,7 +32,7 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
 
    useEffect(()=>{
     const vl=localStorage.getItem("ville")
-    if(vl){
+    if( vl !== null && vl !== "" && vl !==undefined && vl !=="undefined"){
     setVille(JSON.parse(vl))
   }else{setVille("Tunis")}
 
@@ -47,10 +47,18 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
 
 
  useEffect(() => {
-    fetch(`api/weather?ville=${ville}&lang=${langue}`)
-      .then((res) => res.json())
-      .then((json) => setData(json));
-  }, [ville, langue]);
+    async function aa() {
+      try {
+        const url = `api/weather?ville=${ville}&lang=${langue}`;
+        const res = await fetch(url);
+        const json = await res.json();
+        setData(json);
+      } catch (err) {
+        console.error("Erreur:", err);
+      }
+    }
+    aa()
+  }, [ville, langue])
 
   return (
     <WeatherContext.Provider value={{ data, ville, setVille }}>

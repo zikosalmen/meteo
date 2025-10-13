@@ -50,7 +50,7 @@ export default function Main() {
 
 
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-2.5">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 p-2.5">
       <Card className="lg:col-span-2">
         <div
           className="
@@ -59,8 +59,8 @@ export default function Main() {
     "
         >
 
-          <div className="flex items-center justify-center gap-3 sm:gap-5">
-            <p className="text-4xl sm:text-5xl">
+          <div className="flex items-center justify-center gap-3 sm:gap-2">
+            <p className="text-xl sm:text-5xl">
               {data?.main?.temp?.toFixed(0)}
             </p>
             {t("c")}
@@ -75,7 +75,7 @@ export default function Main() {
 
 
           <div className="flex flex-col items-center sm:items-center lg:items-start gap-2">
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-2 sm:gap-1">
               <p className="text-2xl sm:text-3xl font-bold">{t(ville)}</p>
               <Image
                 src="/loc.png"

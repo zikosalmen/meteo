@@ -1,13 +1,5 @@
 "use client";
-import {
-  Area,
-  ComposedChart,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import {Area,ComposedChart,XAxis,YAxis,CartesianGrid,Tooltip,ResponsiveContainer,} from "recharts";
 import { useState, useEffect, useContext } from "react";
 import { WeatherContext } from "./data";
 import { Mode } from "./darkmode";
@@ -18,9 +10,6 @@ export default function TemperatureChart() {
   const [det, setdet] = useState([]);
   const { data, ville } = useContext(WeatherContext);
   const { dark } = useContext(Mode);
-  const now = new Date();
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
   const { t } = useContext(Lang);
 
   useEffect(() => {
@@ -45,6 +34,9 @@ export default function TemperatureChart() {
             minute: "2-digit",
           }),
         }));
+        const cityTime = new Date((data.dt + data.timezone) * 1000);
+        const hours = cityTime.getUTCHours();     
+        const minutes = cityTime.getUTCMinutes();
         const nowValue = {
           temp: data?.main?.temp?.toFixed(0),
           time: `${hours}:${minutes}`,
