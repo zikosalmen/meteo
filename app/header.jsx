@@ -96,7 +96,7 @@ useEffect(() => {
             className={`bg-transparent ${dark ? "text-black" : "text-black"}`}
             value="ar"
           >
-            arabe
+            العربية
           </option>
           <option
             className={`bg-transparent ${dark ? "text-black" : "text-black"}`}

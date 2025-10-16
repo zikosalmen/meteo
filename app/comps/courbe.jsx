@@ -47,7 +47,7 @@ export default function TemperatureChart() {
   }, [ville]);
 
   return (
-    <div style={{ width: "100%", height: 300 }}>
+    <div style={{ width: "98%", height: 300 }}>
       <h2
         className={` rounded-2xl  p-6 text-xl text-center
       ${dark ? ` text-white ` : ` text-black`} `}
@@ -64,7 +64,7 @@ export default function TemperatureChart() {
             <XAxis
               dataKey="time"
               scale="point"
-              tickMargin={16}
+              tickMargin={18}
               tick={(props) => {
                 const { x, y, payload } = props;
                 const color =
@@ -74,7 +74,7 @@ export default function TemperatureChart() {
                     ? "#fff"
                     : "#000";
                 return (
-                  <text x={x} y={y} fill={color} textAnchor="middle">
+                  <text className="text-xl" x={x} y={y} fill={color} textAnchor="middle">
                     {payload.value}
                   </text>
                 );

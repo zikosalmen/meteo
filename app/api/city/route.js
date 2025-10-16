@@ -6,7 +6,7 @@ let cityDataCache = null;
 
 async function getCityData() {
   if (!cityDataCache) {
-    const filePath = path.join(process.cwd(), "public", "city.list.json");
+    const filePath = path.join(process.cwd(), "public", "villes_nom_pays.json");
     const fileContents = await fs.readFile(filePath, "utf8");
     cityDataCache = JSON.parse(fileContents);
   }

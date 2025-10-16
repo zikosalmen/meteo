@@ -76,7 +76,7 @@ export default function Main() {
 
           <div className="flex flex-col items-center sm:items-center lg:items-start gap-2">
             <div className="flex items-center gap-2 sm:gap-1">
-              <p className="text-2xl sm:text-3xl font-bold">{t(ville)}</p>
+              <p className="text-2xl sm:text-xl font-bold">{t(ville)}</p>
               <Image
                 src="/loc.png"
                 width={200}
