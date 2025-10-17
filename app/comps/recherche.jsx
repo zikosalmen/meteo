@@ -55,66 +55,90 @@ console.log("ville: "+ville)
     }`}
   >
     <AsyncSelect
-      cacheOptions
-      loadOptions={loadOptions}
-      defaultOptions={[]}
-      value={ville}
-      onChange={handvill}
-      placeholder="Tapez au moins 3 lettres..."
-      isClearable
-      noOptionsMessage={() => "Aucune région trouvée"}
-      menuPortalTarget={document.body}
-      styles={{
-        control: (base) => ({
-          ...base,
-          backgroundColor: dark ? "#1e1e1e" : "white",
-          color: dark ? "white" : "black",
-          borderColor: dark ? "#555" : "#ccc",
-          minHeight: "40px",
-          height: "40px",
-          fontSize: "12px",
-          borderRadius: "8px",
-          boxShadow: "none",
-          
-        }),
-        valueContainer: (base) => ({
-          ...base,
-          padding: "0 8px",
-        }),
-        input: (base) => ({
-          ...base,
-          margin: 0,
-          padding: 0,
-          color: dark ? "white" : "black",
-        }),
-
-        dropdownIndicator: (base) => ({
-          ...base,
-          padding: "1px",
-        }),
-        clearIndicator: (base) => ({
-          ...base,
-          padding: "1px",
-        }),
-        menuPortal: (base) => ({ ...base, zIndex: 9999 }),
-        menu: (base) => ({
-          ...base,
-          zIndex: 9999,
-          backgroundColor: dark ? "#2a2a2a" : "white",
-          fontSize: "13px",
-          borderRadius: "8px",
-          color: dark ? "white" : "black",
-          overflow: "hidden",
-        }),
-        option: (base, { isFocused }) => ({
-          ...base,
-          padding: "1px",
-          backgroundColor: isFocused ? (dark ? "#333" : "#e6f0ff") : "transparent",
-          color: dark ? "white" : "black",
-          cursor: "pointer",
-        }),
-      }}
-    />
+  cacheOptions
+  loadOptions={loadOptions}
+  defaultOptions={[]}
+  value={ville}
+  onChange={handvill}
+  placeholder="Tapez au moins 3 lettres..."
+  isClearable
+  noOptionsMessage={() => "Aucune région trouvée"}
+  menuPortalTarget={document.body}
+  styles={{
+    control: (base) => ({
+      ...base,
+      backgroundColor: dark ? "#1e1e1e" : "rgba(255, 255, 255, 0.9)",
+      color: dark ? "white" : "black",
+      borderColor: dark ? "#555" : "rgba(135, 206, 235, 0.5)", 
+      minHeight: "40px",
+      height: "40px",
+      fontSize: "13px",
+      borderRadius: "10px",
+      boxShadow: "0 0 6px rgba(135, 206, 235, 0.3)",
+      transition: "all 0.2s ease-in-out",
+    }),
+    valueContainer: (base) => ({
+      ...base,
+      padding: "0 10px",
+    }),
+    input: (base) => ({
+      ...base,
+      margin: 0,
+      padding: 0,
+      color: dark ? "white" : "black",
+    }),
+    dropdownIndicator: (base) => ({
+      ...base,
+      padding: "4px",
+    }),
+    clearIndicator: (base) => ({
+      ...base,
+      padding: "4px",
+    }),
+    menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+    menu: (base) => ({
+      ...base,
+      zIndex: 9999,
+      backgroundColor: dark ? "#2a2a2a" : "rgba(240, 248, 255, 0.9)",
+      fontSize: "13px",
+      borderRadius: "10px",
+      color: dark ? "white" : "black",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      overflow: "hidden",
+      backdropFilter: "blur(10px)",
+    }),
+    option: (base, { isFocused, isSelected, data }) => ({
+      ...base,
+      padding: "10px 15px",
+      backgroundColor: isFocused
+        ? "rgba(135, 206, 250, 0.4)" 
+        : isSelected
+        ? "rgba(135, 206, 235, 0.6)" 
+        : "transparent",
+      color: dark ? "white" : "black",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      gap: "8px",
+      fontWeight: isSelected ? "bold" : "normal",
+      transition: "background-color 0.2s ease",
+    }),
+  }}
+  components={{
+    Option: (props) => {
+      return (
+        <div
+          {...props.innerProps}
+          style={props.getStyles("option", props)}
+          ref={props.innerRef}
+        >
+          <span >📍</span> 
+          {props.children}
+        </div>
+      );
+    },
+  }}
+/>
   </div>
 </div>
 
